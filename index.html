@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Wife ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+	<div class="floating-hearts">
+        <span>❤️</span> <span>💖</span> <span>💕</span> <span>💗</span> <span>❤️</span> 
+        <span>💖</span> <span>💕</span> <span>💗</span> <span>❤️</span> <span>💖</span>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="Sundari_Nene_Nuvvant.webm" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        
+        <div id="intro-container">
+            <h1>Hey Bangaram! ❤️</h1>
+            <p>Before I ask you something important, let's see how well we know each other...</p>
+            <p>Let's take a small romantic quiz!</p>
+            <p style="font-size: 0.9rem; color: #888;">(Turn up your volume 🔊)</p>
+            <button id="start-btn" onclick="startQuiz()">Let's Play</button>
+        </div>
+
+        <div id="quiz-container" style="display: none;">
+            <div class="heart-meter">
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="heart-fill" x1="0" y1="1" x2="0" y2="0">
+                            <stop id="fill-level" offset="0%" stop-color="#e74c3c" />
+                            <stop offset="0%" stop-color="#ffe6e6" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" 
+                          fill="url(#heart-fill)" stroke="#e74c3c" stroke-width="1"/>
+                </svg>
+            </div>
+            <h1 id="quiz-question">Question...</h1>
+            <div class="buttons" id="quiz-options"></div>
+            <p id="feedback-msg"></p>
+        </div>
+
+        <div id="proposal-container" style="display: none;">
+            <img class="gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmZlZmRjMzQ5NjE2M2Q1YzQ2YjE3NzE2NTY3NTk0NzE0ZTVmNTY4ZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PXM/cLS1cfxvGOPVpf9wXM/giphy.gif" alt="Cute Bear">
+            <h1>Bangaram will you be my Valentine?</h1>
+            <p>(For the rest of your life?)</p>
+            <div class="buttons">
+                <button id="yes-btn" onclick="handleYesClick()">YES! ❤️</button>
+                <button id="no-btn" onmouseover="moveNoButton()" onclick="moveNoButton()">No 😢</button>
+            </div>
+        </div>
+
+        <div id="success-container" style="display: none;">
+        
+        <div class="sliding-background">
+            <div class="slide-track">
+                <div class="slide"><img src="photo1.jpg" alt="Memory"></div>
+                 <div class="slide"><img src="photo2.jpg" alt="Memory"></div>
+                 <div class="slide"><img src="photo3.jpg" alt="Memory"></div>
+                 <div class="slide"><img src="photo4.jpg" alt="Memory"></div>
+                 <div class="slide"><img src="photo1.jpg" alt="Memory"></div>
+                 <div class="slide"><img src="photo2.jpg" alt="Memory"></div>
+                 <div class="slide"><img src="photo3.jpg" alt="Memory"></div>
+                 <div class="slide"><img src="photo4.jpg" alt="Memory"></div>
+            </div>
+        </div>
+
+        <div class="overlay-content">
+            <h1>Yay! I knew you'd say Yes! ❤️She said YES! ❤️</h1>
+            
+            <div id="timer-container">
+                <p>I have loved you for:</p>
+                <h2 id="time-together">Calculating...</h2>
+            </div>
+
+            <p id="typewriter-text"></p> 
+            
+            <p class="signature">Bangaram I Love You! 😘</p>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
