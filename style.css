@@ -252,14 +252,4 @@ button {
     background-color: #1ebe57;
 }
 
-/* Add this simple animation to the body */
-body {
-    /* existing styles... */
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 15l-1-1C4 9 1 6 1 3a5 5 0 0 1 10 0 5 5 0 0 1 10 0c0 3-3 6-8 11l-1 1z' fill='%23ffccd5' fill-opacity='0.2'/%3E%3C/svg%3E");
-    animation: backgroundMove 20s linear infinite;
-}
 
-@keyframes backgroundMove {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 -100px; }
-}
