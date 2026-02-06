@@ -230,4 +230,36 @@ button {
 @keyframes scrollMobile {
     0% { transform: translateX(0); }
     100% { transform: translateX(calc(-100vw * 4)); } /* Move exactly 4 full images */
+
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    background-color: #25D366; /* WhatsApp Green */
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: transform 0.2s;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.05);
+    background-color: #1ebe57;
+}
+
+/* Add this simple animation to the body */
+body {
+    /* existing styles... */
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 15l-1-1C4 9 1 6 1 3a5 5 0 0 1 10 0 5 5 0 0 1 10 0c0 3-3 6-8 11l-1 1z' fill='%23ffccd5' fill-opacity='0.2'/%3E%3C/svg%3E");
+    animation: backgroundMove 20s linear infinite;
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 -100px; }
 }
