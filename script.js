@@ -39,6 +39,30 @@ const successContainer = document.getElementById("success-container");
 const noBtn = document.getElementById("no-btn");
 const bgMusic = document.getElementById("bg-music");
 
+// --- UPDATED START QUIZ FUNCTION ---
+function startQuiz() {
+    const bgMusic = document.getElementById("bg-music");
+
+    // 1. Force play immediately to satisfy iPhone's strict user-gesture requirement
+    // This must be the very first thing in the function
+    bgMusic.play().then(() => {
+        console.log("Music playing on " + navigator.platform);
+    }).catch(error => {
+        console.warn("Autoplay prevented. Music will attempt to start on next tap.", error);
+        
+        // Fallback: If it still fails, unlock it on the next screen tap
+        document.addEventListener('click', () => {
+            bgMusic.play();
+        }, { once: true });
+    });
+    
+    // 2. Transition the UI as you did before
+    introContainer.style.display = "none";
+    quizContainer.style.display = "block";
+    loadQuestion();
+}
+
+/*
 function startQuiz() {
     // 1. Play Music
     bgMusic.play().catch(error => {
@@ -51,6 +75,14 @@ function startQuiz() {
     loadQuestion();
 }
 
+// This "unlocks" the audio context on the first tap anywhere for iPhone
+document.body.addEventListener('touchstart', function() {
+    const audio = document.getElementById("bg-music");
+    if (audio.paused) {
+        audio.play().pause(); // Briefly play and pause to unlock
+    }
+}, { once: true });
+*/
 function loadQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
